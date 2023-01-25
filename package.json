@@ -1,7 +1,7 @@
 {
-  "name": "nextra-docs-template",
+  "name": "gaur-money-documents",
   "version": "0.0.1",
-  "description": "Nextra docs template",
+  "description": "Gaur Money",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
