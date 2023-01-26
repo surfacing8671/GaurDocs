@@ -1,0 +1,185 @@
+.leftLights::before {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  width: 25%;
+  height: 900px;
+  left: -12.5%;
+  top: calc(50% - 900px / 2 + 151px);
+  opacity: 0.2;
+  background: linear-gradient(180deg, #552c0698 0%, rgba(97, 42, 5, 0.651) 100%);
+  filter: blur(125px);
+  transform: rotate(-15deg);
+  border-bottom-left-radius: 25% 25%;
+  border-bottom-right-radius: 25% 25%;
+  border-top-left-radius: 100% 100%;
+  border-top-right-radius: 100% 100%;
+  z-index: 200;
+  will-change: filter;
+  mix-blend-mode: normal;
+}
+
+.leftLights::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  width: 40%;
+  height: 422px;
+  left: 0px;
+  top: calc(50% - 422px / 2 + 298px);
+  opacity: 0.5;
+  background: linear-gradient(
+    180deg,
+    rgba(104, 67, 11, 0.664) 0%,
+    rgba(116, 57, 3, 0.4) 100%
+  );
+  filter: blur(125px);
+  will-change: filter;
+  mix-blend-mode: normal;
+}
+
+.rightLights::before {
+  z-index: 200;
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  width: 25%;
+  height: 900px;
+  right: -12.5%;
+  top: calc(50% - 900px / 2 + 151px);
+  background-image: linear-gradient(
+    180deg,
+    rgba(190, 117, 8, 0.37) 0%,
+    rgba(224, 159, 17, 0.548) 100%
+  );
+  filter: blur(125px);
+  transform: rotate(15deg);
+  border-bottom-left-radius: 25% 25%;
+  border-bottom-right-radius: 25% 25%;
+  border-top-left-radius: 100% 100%;
+  border-top-right-radius: 100% 100%;
+  opacity: 0.2;
+  overflow: hidden;
+  will-change: filter;
+  mix-blend-mode: normal;
+}
+
+.rightLights::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  width: 40%;
+  height: 422px;
+  right: 0px;
+  top: calc(50% - 422px / 2 + 298px);
+  opacity: 0.25;
+
+  background: linear-gradient(
+    180deg,
+    rgba(202, 141, 10, 0.774) 0%,
+    rgb(148, 111, 8) 100%
+  );
+  transform: matrix(-1, 0, 0, 1, 0, 0);
+  filter: blur(125px);
+  will-change: filter;
+  mix-blend-mode: normal;
+}
+
+.counter-border {
+  --border-radius: 12px;
+  --border-size: 1px;
+  --padding: 5px;
+  --border-bg: conic-gradient(
+    from 180deg at 50% 50%,
+    #571805 0deg,
+    #c99812 112.5deg,
+    #ecf000 228.75deg,
+    rgba(42, 138, 246, 0) 360deg
+  );
+  position: relative;
+  overflow: hidden;
+  font-size: 2rem;
+  padding: calc(var(--padding) + var(--border-size));
+  border-radius: var(--border-radius);
+  display: inline-block;
+  z-index: 0;
+  backface-visibility: hidden;
+  perspective: 1000;
+  transform: translate3d(0, 0, 0);
+  transfom: translateZ(0);
+}
+
+.counter-border:hover {
+  cursor: pointer;
+}
+
+.counter-border i {
+  content: "";
+  position: absolute;
+  top: var(--border-size);
+  right: var(--border-size);
+  bottom: var(--border-size);
+  left: var(--border-size);
+  padding: var(--border-size);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  z-index: -1;
+  border-radius: calc(var(--border-radius) + var(--border-size));
+}
+
+.counter-border i::before {
+  content: "";
+  display: block;
+  background: var(--border-bg);
+  box-shadow: 0px 0px 40px 20px --var(--border-bg);
+  width: calc(100% * 1.41421356237);
+  padding-bottom: calc(100% * 1.41421356237);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 100%;
+  z-index: -2;
+  animation: spin 5s linear infinite;
+}
+
+@media (prefers-reduced-motion) {
+  .counter-border i::before {
+    animation: none;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(0);
+  }
+}
+
+.leftBottomLights {
+  position: absolute;
+  width: 387px;
+  height: 404px;
+  left: calc(50% - 387px / 2 - 80px);
+  bottom: -32px;
+  background: linear-gradient(180deg, #6d4006 0%, #9b470f 100%);
+  mix-blend-mode: normal;
+  opacity: 0.15;
+  filter: blur(50px);
+  will-change: filter;
+}
+
+.rightBottomLights {
+  position: absolute;
+  width: 387px;
+  height: 404px;
+  left: calc(50% - 387px / 2 + 81px);
+  bottom: -32px;
+  background: linear-gradient(180deg, #c7c404 0%, #917b01 100%);
+  mix-blend-mode: normal;
+  opacity: 0.15;
+  filter: blur(50px);
+  will-change: filter;
+}
